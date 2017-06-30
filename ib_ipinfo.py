@@ -14,7 +14,7 @@ password = '<HOWEVER YOU DO THE PASSWORD>'
 
 ip_address = '<HOWEVER YOU GET THE IP ADDRESS>'
 
-api_url = requests.get('https://10.1.9.3/wapi/v1.4.2/ipv4address?ip_address=' + ip_address, auth=(user,password), verify=False)
+api_url = requests.get('https://<YOUR IB SERVER>/wapi/v1.4.2/ipv4address?ip_address=' + ip_address, auth=(user,password), verify=False)
 data = json.loads(api_url.text)
 
 for item in data:
