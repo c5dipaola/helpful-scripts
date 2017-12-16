@@ -26,7 +26,7 @@ fileList = []
 ###########################################################################################################################
 for root, dirs, files in os.walk(findWHERE):
     for name in files:
-        if name.endswith('.txt'):
+        if name.endswith(('.txt', '.log')):
             filepath = os.path.join(root, name)
             fileList.append(filepath)
 
@@ -39,9 +39,10 @@ print(" ")
 print("Going to go through and replace that string now...")
 time.sleep(2)
 
+
 ###########################################################################################################################
-# This definition "findReplace" below opens up the previously appended "fileList", which is a list of all the files in 
-# the "findWHERE" directory that are .txt files.  As it opens the files, it regex searches for string that are possible 
+# This definition "findReplace" below opens up the previously appended "fileList", which is a list of all the files in
+# the "findWHERE" directory that are .txt files.  As it opens the files, it regex searches for string that are possible
 # patterns of passwords you may have used in past and replaces them with exclamation marks.
 #
 # The Regex pattern explained:
@@ -59,16 +60,22 @@ def findReplace(files, filePattern):
 
     :param files: Enter "fileList", or what ever name used as the list that get's appended via the for loop above.
     :param filePattern: Currently just ".txt" should be entered, as that is the variable defined in the for loop above.
-    
+
     Example:
-    
+
     findReplace(fileList, '*.txt')
     """
+    pword_regex = '([Bb][0,Oo]{2}ked\w+\S*|[Ff]l[0,Oo]ck\W\w+\S\w+\S*)'
+    replacement = '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
     for files in fileList:
         with open(files) as f:
             s = f.read()
-        with open(files, "w") as f:
-            f.write(re.sub('([Bb][0,Oo]{2}ked\w+\S*|[Ff]l[0,Oo]ck\W\w+\S\w+\S*)', '!!!!!!!!!!!!!!!!', s))
+            if re.search(pword_regex, s) is None:
+                continue
+            else:
+                with open(files, 'w') as f:
+                    f.write(re.sub(pword_regex, replacement, s))
+
 
 # This is findReplace being used.
-findReplace(fileList, '*.txt')
+findReplace(fileList, ['*.txt', '*.log'])
