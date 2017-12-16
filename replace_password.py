@@ -1,7 +1,6 @@
 import os
 import time
 import re
-import getpass
 
 #############################################################################
 #  Explanation of this script:
