@@ -33,36 +33,6 @@ def apiResponse(apicall):
     return decoded
 
 
-# The definition "dayOfWeek" isn't really needed.  I reinvented the wheel with this.
-# You can just use the time function value of "%A" to get the actual day of the week.
-
-def dayOfWeek(epoch_in):
-    """
-    The intent was to provide the spelled out day of the week based on the epoch time.
-    I didn't realize you could use the Time modules "%A" to get the same thing.
-
-    Example usage: dayOfWeek(1513436400) would return "Saturday"
-
-    :param epoch_in: Enter the epoch time to get the day of the week.
-    :return: Returns the day of the week (NOTE: Same as Time's "%A")
-    """
-    dow = time.strftime('%w', (time.localtime(epoch_in)))
-    if dow == "0":
-        return "Sunday"
-    elif dow == "1":
-        return "Monday"
-    elif dow == "2":
-        return "Tuesday"
-    elif dow == "3":
-        return "Wednesday"
-    elif dow == "4":
-        return "Thursday"
-    elif dow == "5":
-        return "Friday"
-    elif dow == "6":
-        return "Saturday"
-
-
 zip_input = raw_input("Please enter the 5 digit zip code:  ")
 
 base_url = "http://api.openweathermap.org/data/2.5/"
