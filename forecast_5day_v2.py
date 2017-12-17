@@ -40,7 +40,7 @@ base_url = "http://api.openweathermap.org/data/2.5/"
 type_5day_zip = "forecast?zip="
 units_imp = "&units=imperial"
 # NOTE - You need to sign up at https://openweathermaps.org and get your own API Key
-api_key = "&appid=6c3c24fb49e97d95a446fc93567373f7"
+api_key = "&appid=<YOUR OPENWEATHERMAPS API KEY GOES HERE>"
 
 print(base_url + type_5day_zip + zip_input + units_imp + api_key)
 
