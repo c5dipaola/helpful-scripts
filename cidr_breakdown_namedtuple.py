@@ -17,7 +17,7 @@ def NumToIP(n):
 ip_in = '10.1.0.0'
 
 # This is the named tuple that will be called and set up as the CIDR breakdowns in the next stanza
-CIDR_IP_Breakdown = collections.namedtuple('Cidr_IP_Brkdwn', ['vip', 'dc1_dev1', 'dc1_dev2', 'dc2_dev1', 'dc2_dev2'])
+CIDR_IP_Breakdown = collections.namedtuple('CIDR_IP_Breakdown', ['vip', 'dc1_dev1', 'dc1_dev2', 'dc2_dev1', 'dc2_dev2'])
 
 # Below are the CIDR breakdown using the named tuple above.  In this example, we are doing the math to get the VIP
 # address (could be VRRP, HSRP or whatever) shared among 4 devices.  "dc1_dev1" would be Device 1 in Datacenter 1,
