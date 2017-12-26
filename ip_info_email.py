@@ -88,5 +88,5 @@ with open(os.path.join(os_path, 'ip_info_%s.txt' % ip_address), 'rb') as new_mes
 ###########################################################################################################################
 
 server = smtplib.SMTP('<MY SERVER NAME OR IP>')
-server.sendmail('<SENDER ADDRESS>', ['<RECIPIENT@ADDRESS>', '<ANOTHER@ADDRESS>], msg.as_string())
+server.sendmail('<SENDER ADDRESS>', ['<RECIPIENT@ADDRESS>', '<ANOTHER@ADDRESS>'], msg.as_string())
 server.quit()
