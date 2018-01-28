@@ -106,13 +106,13 @@ def pa_ha_state(clioutput):
 
 print("\n" * 3)
 if pa_ha_state(cli_output_1):
-    print("ACTIVE UNIT or SAUK PAN")
+    print("ACTIVE UNIT or STAND-ALONE PAN")
 else:
     print("PASSIVE or NON-HA UNIT")
 
 print("\n" * 3)
 if pa_ha_state(cli_output_2):
-    print("ACTIVE UNIT or SAUK PAN")
+    print("ACTIVE UNIT or STAND-ALONE PAN")
 else:
     print("PASSIVE or NON-HA UNIT")
 
