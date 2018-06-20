@@ -56,7 +56,7 @@ diff = _unidiff_output(template, show_syslog)
 print("\n------  Here is the full 'DIFF' -------\n\n" + diff + "\n\n--------------------------------\n\n")
 cmdlist = []
 for line in diff.splitlines():
-    # Look for lines starting with '+set' as those are the lines that are different from our template
+    # -- Look for lines starting with '+set' as those are the lines that are different from our template
     if "+set" in line:
         # -- Removes the '+' in front of the diffed line
         lineout = line.strip('+')
